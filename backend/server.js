@@ -6,13 +6,18 @@ const httpServer = createServer(app);
 const io = new Server(httpServer);
 
 io.on("connection", (socket) => {
- console.log("A user connected")
+  console.log("A user connected");
 
- socket.on("disconnect",()=>{
-    console.log("A user disconnecetd")
- })
+  socket.on("disconnect", () => {
+    console.log("A user disconnecetd");
+  });
+
+  socket.on("messsage",()=>{
+    console.log("Message recieved")
+  })
+
 });
 
-httpServer.listen(3000,()=>{
-    console.log("Server is running at port 3000")
+httpServer.listen(3000, () => {
+  console.log("Server is running at port 3000");
 });
