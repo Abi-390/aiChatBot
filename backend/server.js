@@ -12,8 +12,8 @@ io.on("connection", (socket) => {
     console.log("A user disconnecetd");
   });
 
-  socket.on("messsage",()=>{
-    console.log("Message recieved")
+  socket.on("message",()=>{
+    console.log("Message recieved from socket server")
   })
 
 });
