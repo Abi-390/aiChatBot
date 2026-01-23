@@ -9,7 +9,7 @@ io.on("connection", (socket) => {
   console.log("A user connected");
 
   socket.on("disconnect", () => {
-    console.log("A user disconnecetd from socket server");
+    console.log("A user disconnecetd ");
   });
 
   socket.on("message",()=>{
