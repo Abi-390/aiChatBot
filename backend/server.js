@@ -13,7 +13,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("message",()=>{
-    console.log("Message recieved from socket server")
+    console.log("Message recieved")
   })
 
 });
