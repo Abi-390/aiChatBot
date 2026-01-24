@@ -45,21 +45,25 @@ It focuses on **real-time communication, reliability, and graceful handling of e
 ## 📁 Project Structure
 
 aiChatBot/
-│
 ├── frontend/
-│   ├── src/
-│   ├── public/
-│   └── package.json
+│ ├── src/
+│ │ ├── App.jsx # Main React component
+│ │ ├── main.jsx # React entry point
+│ │ └── index.css # Tailwind CSS styles
+│ ├── public/ # Static assets
+│ ├── package.json # Frontend dependencies
+│ └── vite.config.js # Vite configuration
 │
 ├── backend/
-│   ├── src/
-│   │   ├── services/
-│   │   │   └── ai.service.js
-│   │   └── app.js
-│   ├── server.js
-│   └── package.json
+│ ├── src/
+│ │ ├── services/
+│ │ │ └── ai.service.js # Gemini AI integration logic
+│ │ └── app.js # Express app configuration
+│ ├── server.js # HTTP + Socket.IO server
+│ ├── package.json # Backend dependencies
+│ └── .env # Environment variables (not committed)
 │
-└── README.md
+└── README.md # Project documentation
 
 ---
 
