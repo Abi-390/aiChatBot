@@ -7,6 +7,15 @@ const generateResponse = require("./src/services/ai.service");
 const httpServer = createServer(app);
 const io = new Server(httpServer);
 
+const chatHistory = [{
+    role: 'user',
+    parts: [{ text: 'What is langchain in webdev?' }]
+  },
+{
+    role: 'user',
+    parts: [{ text: 'What is Web3?' }]
+  }]
+
 io.on("connection", (socket) => {
   console.log("A user connected");
 
@@ -15,10 +24,20 @@ io.on("connection", (socket) => {
   });
 
   socket.on("ai-message", async (data) => {
-    console.log("Recieved ai-message", data.prompt);
-    const response = await generateResponse(data.prompt);
+
+    console.log("Recieved ai-message", data);
+
+    chatHistory.push({
+        role : "user",
+        parts : [{text : data}]
+    })
+
+    const response = await generateResponse(chatHistory);
+
     console.log("Ai-response:", response);
-    socket.emit("ai-message-response",{response})
+
+    socket.emit("ai-message-response",response)
+
   });
 });
 
