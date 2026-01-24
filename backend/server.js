@@ -18,6 +18,7 @@ io.on("connection", (socket) => {
     console.log("Recieved ai-message", data.prompt);
     const response = await generateResponse(data.prompt);
     console.log("Ai-response:", response);
+    socket.emit("ai-message-response",{response})
   });
 });
 
