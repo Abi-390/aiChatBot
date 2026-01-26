@@ -77,7 +77,7 @@ export default function App() {
           
           {!serverReady && (
             <div className="text-center text-gray-500 italic">
-              Please wait, Our backend servers are starting…
+              Please wait, Our backend servers are starting, it may take upto 50 Seconds…
             </div>
           )}
 
